@@ -1,0 +1,7 @@
+/nbproject/
+/.idea/
+
+/vendor/
+composer.lock
+composer.phar
+w

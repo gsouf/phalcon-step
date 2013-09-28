@@ -1,0 +1,16 @@
+{
+    "require" : {
+        "sneakybobito/phalcon-stubs": "1.2.0",
+        "phalcon/incubator": "dev-master",
+        "twig/twig": "v1.13.2",
+        "mobiledetect/mobiledetectlib": "2.6.9"
+
+    },
+    
+    "autoload": {
+        "psr-0" : {
+            "Controllers"   :   "app",
+            "PhalconStep"   :   "lib"
+        }
+    }
+}
