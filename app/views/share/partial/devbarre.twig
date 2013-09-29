@@ -1,0 +1,34 @@
+
+<link rel="stylesheet" type="text/css" href="/css/pstep-dev.css" />
+<div id="pstep-dev-barre">
+
+    {% set executionMemory = pStepDevHelper.getMemoryPeak()/1000 %}
+    {% set executionTime = pStepDevHelper.getRunningTime()*1000 %}
+
+    <ul>
+        <li id="pstep-dev-hide-barre" class="no-hide" > ~ </li>
+        <li class="pstep-dev-info no-hide"> <b>Time</b> :
+            {% if executionTime > 900 %}
+                {{ (executionTime / 1000) | number_format(2)  }} s
+            {% else %}
+                {{ executionTime | number_format(0)  }} ms
+            {% endif %}
+        </li>
+
+        <li class="pstep-dev-info no-hide"> <b>Mem</b> :
+            {% if executionMemory > 900 %}
+                {{ (executionMemory/1000) | number_format(2)  }} MB
+            {% else %}
+                {{ executionMemory | number_format(0)  }} KB
+            {% endif %}
+        </li>
+
+       
+    </ul>
+
+
+</div>
+
+<script type="text/javascript" src="/js/pstep-dev.js"></script>
+
+

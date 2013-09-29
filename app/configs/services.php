@@ -1,19 +1,15 @@
 <?php
 
-/* @ var $config \Phalcon\Config\ */
-
 use Phalcon\DI\FactoryDefault,
     Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 
-/**
- * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
- */
 $di = new \Phalcon\DI();
 
-/**
- * Set the data cache service*
-*/
 
+if(PhalconStep::isDevEnvironment()){
+    include ROOT_PATH."/app/services/dev.php";
+    $di->get("dev")->start();
+}
 
 // load the caching service
 include ROOT_PATH."/app/services/caches.php";

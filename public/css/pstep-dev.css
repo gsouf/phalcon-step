@@ -1,0 +1,72 @@
+#pstep-dev-barre a,#pstep-dev-barre li, #pstep-dev-barre p,#pstep-dev-barre div{
+    font-family: arial;
+    text-shadow: none;
+    color: #444;
+}
+
+#pstep-dev-barre{
+    position: fixed;
+    bottom:0;
+    right:0;
+    background:#555;
+    padding: 0;
+
+    background: #f7f7f7; /* Old browsers */
+    background: -moz-linear-gradient(top, #f7f7f7 0%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f7f7f7 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f7f7f7 0%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f7f7f7 0%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #f7f7f7 0%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    border: 1px solid #aaa;
+    border-right: 0;
+    border-bottom: 0;
+
+    z-index: 99;
+
+}
+
+#pstep-dev-barre>ul{
+    margin:0;
+    padding: 0;
+}
+
+#pstep-dev-barre>ul>li{
+    display:inline-block;
+    border-left:1px solid #DDD;
+    padding: 7px;
+
+}
+
+#pstep-dev-barre>ul>li .pstep-dev-config{
+    cursor: pointer;
+    position: relative;
+}
+
+#pstep-dev-barre>ul>li .pstep-dev-config:hover{
+    color: #005580;
+}
+
+#pstep-dev-hide-barre{
+    cursor: pointer;
+}
+
+#pstep-dev-pannel{
+    display:none;
+    width:300px;
+    height: 480px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    background: #555;
+    overflow-y: auto;
+    border-radius: 5px  0 0 5px ;
+}
+
+.pstep-devtool-title{
+    color: white;
+    font-weight: bold;
+}

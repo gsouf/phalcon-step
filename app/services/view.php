@@ -23,17 +23,19 @@ $di->set('view', function() use ($config,$di) {
             $te=$twig->getTwig();
             $te->getLoader()->addPath($config->application->viewsDir . "share/");
             
-            //=====================
-            // enable cache or not
-            $enableCacheView=true;
-            if(ENV_DEV == APPLICATION_ENV){
+
+            $enableViewCache = true;
+
+            if(PhalconStep::isDevEnvironment()){
+                // add the twig debug extension
                 $te->addExtension(new Twig_Extension_Debug());
+                $enableViewCache = $di->get("dev")->enableViewCache();
+                $te->addGlobal("pStepDevHelper",$di->get("dev"));
             }
-            
-            if($enableCacheView)
+
+            if($enableViewCache)
+                // add cache only if not in dev
                 $te->setCache($config->application->cacheDir."/twig");
-            //
-            //======================
 
             // time() function
             $te->addFunction(
